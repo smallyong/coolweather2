@@ -12,13 +12,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by small_yong on 2016/12/8.
- */
-
 public class Utility {
-    /*
-    解析和处理服务器返回的省级数据
+
+    /**
+     * 解析和处理服务器返回的省级数据
      */
     public static boolean handleProvinceResponse(String response) {
         if (!TextUtils.isEmpty(response)) {
@@ -39,8 +36,8 @@ public class Utility {
         return false;
     }
 
-    /*
-    解析和处理服务器返回的市级数据
+    /**
+     * 解析和处理服务器返回的市级数据
      */
     public static boolean handleCityResponse(String response, int provinceId) {
         if (!TextUtils.isEmpty(response)) {
@@ -62,8 +59,8 @@ public class Utility {
         return false;
     }
 
-    /*
-    解析和处理服务器返回的县级数据
+    /**
+     * 解析和处理服务器返回的县级数据
      */
     public static boolean handleCountyResponse(String response, int cityId) {
         if (!TextUtils.isEmpty(response)) {
@@ -85,8 +82,8 @@ public class Utility {
         return false;
     }
 
-    /*
-    将返回的JSON数据解析成Weather实体类
+    /**
+     * 将返回的JSON数据解析成Weather实体类
      */
     public static Weather handleWeatherResponse(String response) {
         try {
@@ -94,9 +91,10 @@ public class Utility {
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
             String weatherContent = jsonArray.getJSONObject(0).toString();
             return new Gson().fromJson(weatherContent, Weather.class);
-        } catch (JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
+
 }
