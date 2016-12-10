@@ -172,7 +172,8 @@ public class WeatherActivity extends AppCompatActivity {
         String updateTime = weather.basic.update.updateTime.split(" ")[1];
         String degree = weather.now.temperature + "°C";
         String weahterInfo = weather.now.more.info;
-        titleUpdateTime.setText(cityName);
+        titleCity.setText(cityName);
+        titleUpdateTime.setText(updateTime);
         degreeText.setText(degree);
         weatherInfoText.setText(weahterInfo);
         forecastLayout.removeAllViews();

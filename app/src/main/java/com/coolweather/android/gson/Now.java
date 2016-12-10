@@ -15,7 +15,7 @@ public class Now {
 
     public class More {
 
-        @SerializedName("tex")
+        @SerializedName("txt")
         public String info;
     }
 
